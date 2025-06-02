@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel - School Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef5ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .login-container, .dashboard {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    }
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      border: 2px solid #004080;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+    .login-container input[type="password"]:focus {
+      outline: none;
+      border-color: #ffcc00;
+      background-color: #fef9e7;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 15px;
+      font-size: 20px;
+      background-color: #ffcc00;
+      color: #004080;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .login-container button:hover {
+      background-color: #e6b800;
+    }
+    .dashboard {
+      display: none;
+      text-align: center;
+    }
+    .dashboard h2 {
+      color: #004080;
+      margin-bottom: 30px;
+    }
+    .dashboard button {
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      min-width: 180px;
+    }
+    .dashboard button:hover {
+      background-color: #002f5f;
+    }
+    .logout-btn {
+      margin-top: 40px;
+      background-color: #cc0000;
+    }
+    .logout-btn:hover {
+      background-color: #990000;
+    }
+  </style>
+</head>
+<body>
+  <header>School Website Admin Panel</header>
+
+  <div class="login-container" id="loginContainer">
+    <input type="password" id="adminPassword" placeholder="Enter Admin Password" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="dashboard" id="dashboard">
+    <h2>Welcome, Admin!</h2>
+    <button onclick="openSection('aboutus')">Edit About Us</button>
+    <button onclick="openSection('events')">Edit Events</button>
+    <button onclick="openSection('board')">Edit Board</button>
+    <button onclick="openSection('achievements')">Edit Achievements</button>
+    <button onclick="openSection('employment')">Edit Employment</button>
+    <button onclick="openSection('stuff')">Edit Stuff/Faculty</button>
+
+    <br />
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const correctPassword = "admin123"; // Change this!
+
+    function login() {
+      const enteredPass = document.getElementById("adminPassword").value;
+      if (enteredPass === correctPassword) {
+        document.getElementById("loginContainer").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+      } else {
+        alert("Incorrect password!");
+      }
+    }
+
+    function logout() {
+      document.getElementById("adminPassword").value = "";
+      document.getElementById("dashboard").style.display = "none";
+      document.getElementById("loginContainer").style.display = "block";
+    }
+
+    function openSection(section) {
+      alert("Open " + section + " editing page or modal here.");
+      // Here you can redirect or open modal/dialog for editing that section
+      // e.g. window.location.href = section + ".html";
+    }
+  </script>
+</body>
+</html>

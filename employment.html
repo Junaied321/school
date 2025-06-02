@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employment</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #eef5ff;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #003366;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #004080;
+      padding-bottom: 10px;
+      color: #004080;
+    }
+    .job {
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-left: 5px solid #004080;
+      margin-bottom: 20px;
+    }
+    .job h3 {
+      margin: 0 0 10px;
+      color: #003366;
+    }
+    .job p {
+      margin: 5px 0;
+    }
+    .apply {
+      background-color: #004080;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+    .apply:hover {
+      background-color: #002f5f;
+    }
+    /* Admin Login Box */
+    .admin-login {
+      text-align: center;
+      padding: 25px 15px;
+      background-color: #004080;
+      max-width: 400px;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .admin-input, .admin-textarea, .admin-file {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 12px 0;
+      border: 2px solid #0059b3;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+    .admin-input:focus, .admin-textarea:focus, .admin-file:focus {
+      outline: none;
+      border-color: #ffcc00;
+      background-color: #fef9e7;
+    }
+    .admin-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .admin-button {
+      background-color: #ffcc00;
+      color: #004080;
+      border: none;
+      padding: 14px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    .admin-button:hover {
+      background-color: #e6b800;
+    }
+    /* Admin Panel */
+    .admin-panel {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #ddeeff;
+      border: 2px dashed #004080;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Employment Opportunities</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <div id="adminLogin" class="admin-login">
+    <input type="password" id="adminPass" placeholder="Enter Admin Password" class="admin-input" />
+    <button onclick="checkLogin()" class="admin-button">Login</button>
+  </div>
+
+  <main>
+    <h2>Current Openings</h2>
+
+    <div class="job">
+      <h3>Mathematics Teacher (Senior Classes)</h3>
+      <p><strong>Qualifications:</strong> M.Sc in Mathematics with B.Ed</p>
+      <p><strong>Experience:</strong> Minimum 3 years of teaching experience</p>
+      <a class="apply" href="#">Apply Now</a>
+    </div>
+
+    <div class="job">
+      <h3>Computer Lab Assistant</h3>
+      <p><strong>Qualifications:</strong> BCA or equivalent diploma</p>
+      <p><strong>Experience:</strong> 1-2 years of experience in school labs</p>
+      <a class="apply" href="#">Apply Now</a>
+    </div>
+
+    <!-- Admin Upload/Edit Panel -->
+    <div class="admin-panel" id="adminPanel" style="display: none;">
+      <h2>Admin Panel - Update Employment Info</h2>
+      <input type="text" placeholder="Job Title" class="admin-input" />
+      <textarea placeholder="Job Description" class="admin-textarea"></textarea>
+      <input type="file" accept="image/*" class="admin-file" />
+      <button type="submit" class="admin-button">Upload/Update</button>
+    </div>
+  </main>
+
+  <script>
+    function checkLogin() {
+      const pass = document.getElementById("adminPass").value;
+      if (pass === "admin123") { // Change this password as needed
+        document.getElementById("adminPanel").style.display = "block";
+        document.getElementById("adminLogin").style.display = "none";
+      } else {
+        alert("Incorrect password.");
+      }
+    }
+  </script>
+</body>
+</html>

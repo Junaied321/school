@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Principal - About Us</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #003366;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+    section img {
+      max-width: 200px;
+      float: left;
+      margin: 0 20px 20px 0;
+      border-radius: 10px;
+    }
+    .dropdown {
+      clear: both;
+      margin-top: 20px;
+    }
+    select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .principal-details {
+      display: flex;
+      margin-top: 20px;
+    }
+    .principal-photo {
+      width: 200px;
+      height: auto;
+      margin-right: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Principal's Message</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  /* /<div id="adminLogin" style="text-align: center; padding: 20px;">
+  <input type="password" id="adminPass" placeholder="Enter Admin Password">
+  <button onclick="checkLogin()">Login</button>
+</div>
+
+  <main>
+    <section>
+      <div class="principal-details">
+        <img id="subrata.jpg" src="subrata.jpg" alt="Principal Photo" class="principal-photo" />
+        <p id="principal-msg">
+          Mr. Subrata Ghosh is our current principal, focusing on holistic growth, community involvement, and academic excellence.
+        </p>
+      </div>
+      <div class="dropdown">
+        <label for="principal-list">Former Principals:</label>
+        <select id="principal-list" onchange="updatePrincipalInfo()">
+          <option value="">-- Select Principal --</option>
+          <option value="rk">Mr. R. K. Sharma (2000–2005)</option>
+          <option value="meera">Mrs. Meera Nair (2006–2012)</option>
+          <option value="ajay">Dr. Ajay Singh (2013–2020)</option>
+          <option value="suresh">Mr. Suresh Gupta (2020–Present)</option>
+        </select>
+      </div>
+	  /* /<div class="admin-panel" id="adminPanel" style="display: none;">
+  <h2>Admin Panel - Update Content</h2>
+  <input type="text" placeholder="Title">
+  <textarea placeholder="Description or Content"></textarea>
+  <input type="file" accept=".jpg,.jpeg,.png,.txt">
+  <button type="submit">Upload/Update</button>
+</div>
+    </section>
+  </main>
+  <script>
+    const principals = {
+      rk: {
+        img: 'rk_sharma.jpg',
+        msg: 'Mr. R. K. Sharma served as the founding principal and laid the foundation of our excellence-driven culture from 2000 to 2005.'
+      },
+      meera: {
+        img: 'meera_nair.jpg',
+        msg: 'Mrs. Meera Nair brought in progressive teaching methodologies and emphasized inclusive education during her tenure from 2006 to 2012.'
+      },
+      ajay: {
+        img: 'ajay_singh.jpg',
+        msg: 'Dr. Ajay Singh introduced modern infrastructure and digitization, leading the school from 2013 to 2020 with a futuristic vision.'
+      },
+      suresh: {
+        img: 'suresh_gupta.jpg',
+        msg: 'Mr. Suresh Gupta is our current principal, focusing on holistic growth, community involvement, and academic excellence.'
+      }
+    };
+
+    function updatePrincipalInfo() {
+      const select = document.getElementById('principal-list');
+      const key = select.value;
+      if (principals[key]) {
+        document.getElementById('principal-img').src = principals[key].img;
+        document.getElementById('principal-msg').textContent = principals[key].msg;
+      }
+    }
+  </script>
+  <script>
+  function checkLogin() {
+    const pass = document.getElementById("adminPass").value;
+    if (pass === "admin123") {
+      document.getElementById("adminPanel").style.display = "block";
+      document.getElementById("adminLogin").style.display = "none";
+    } else {
+      alert("Incorrect password.");
+    }
+  }
+</script>
+
+</body>
+</html>
