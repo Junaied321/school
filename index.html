@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .top-bar {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      text-align: right;
+    }
+    .top-bar a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+    .logo-nav {
+      display: flex;
+      align-items: center;
+      background-color: #004080;
+      padding: 10px;
+      justify-content: space-between;
+    }
+    .logo-nav img {
+      height: 60px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      position: relative;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #004080;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      top: 100%;
+      left: 0;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: slide 12s infinite;
+    }
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .caption h2 {
+      margin: 0;
+      font-size: 32px;
+    }
+    .caption button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @keyframes slide {
+      0% { margin-left: 0; }
+      33% { margin-left: -100%; }
+      66% { margin-left: -200%; }
+      100% { margin-left: 0; }
+    }
+    main {
+      padding: 20px;
+      background-color: #e6f2ff;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+    <a href="https://youtube.com" target="_blank">YouTube</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+
+  <div class="logo-nav">
+    <img src="logo.png" alt="School Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="school.html">School</a>
+      <div class="dropdown">
+        <a >About Us</a>
+        <div class="dropdown-content">
+          <a href="principal.html">Principal</a>
+          <a href="committee.html">Managing Committee</a>
+          <a href="students.html">Remarkable Students</a>
+          <a href="staff.html">Staff / Faculty</a>
+        </div>
+      </div>
+      <a href="board.html">Board</a>
+      <a href="achievement.html">Achievement</a>
+      <a href="employment.html">Employment</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </div>
+
+  <div class="slider">
+    <div class="slides">
+      <img src="image1.jpg" alt="Slide 1">
+      <img src="image2.jpg" alt="Slide 2">
+      <img src="image3.jpg" alt="Slide 3">
+	  <img src="image4.jpg" alt="Slide 3">
+    </div>
+    <div class="caption">
+      <h2>Welcome to <br><b>Gustia Kshetranath High School<B></h2>
+      <p>Empowering students for a brighter future</p>
+      <button onclick="window.location.href='aboutus.html'">Learn More</button>
+    </div>
+  </div>
+
+  <main>
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2025 School Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>
